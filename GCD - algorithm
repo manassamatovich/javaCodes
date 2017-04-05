@@ -1,0 +1,36 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Main
+{
+    Scanner in;
+    PrintWriter out;
+    void solve(Scanner in, PrintWriter out) {
+        int a = in.nextInt();
+        int b = in.nextInt();
+        out.println( gcd(a, b) );
+    }
+    int gcd(int a, int b) {
+        for (;;)
+        {
+            if (a == 0) return b;
+            b %= a;
+            if (b == 0) return a;
+            a %= b;
+        }
+    }
+    void run() {
+        in = new Scanner(System.in);
+        out = new PrintWriter(System.out);
+        try {
+            solve(in, out);
+        } finally {
+            out.close();
+        }
+    }
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	    new Main().run();
+	}
+}
