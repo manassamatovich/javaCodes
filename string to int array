@@ -1,0 +1,14 @@
+import java.lang.*;
+import java.util.*;
+
+class ConsoleReader
+{
+    public static void main(String[] args)
+    {
+      /* src: http://stackoverflow.com/questions/7646392/convert-string-to-int-array-in-java */
+        String str = "[1, 2, 3, 4, 5, 6, 7, 8, 9, 0]";
+        int[] arr = Arrays.stream(str.substring(1, str.length()-1).split(","))
+            .map(String::trim).mapToInt(Integer::parseInt).toArray();
+        System.out.println(Arrays.toString(arr));
+    }
+}
