@@ -1,0 +1,21 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args)
+	{
+		// your code goes here
+		Scanner in = new Scanner(System.in);
+		PrintWriter out = new PrintWriter(System.out);
+		int n = 0;
+		try {
+		    n = in.nextInt();
+		}
+		catch(Exception e) {
+		}
+		out.print( n );
+		out.close();
+	}
+}
