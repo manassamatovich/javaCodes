@@ -1,0 +1,17 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.util.logging.Logger;
+import java.util.logging.Level;
+import java.util.logging.*;
+public class Sol {
+  private static Logger LOG = Logger.getLogger("");
+  public static void main(String[] args) throws java.lang.Exception {
+    //LOG.setLevel(Level.OFF);
+    //LogManager.getLogManager().reset();
+  	int n = 0;
+    System.out.println( n );
+    LOG.info("Logging an INFO-level message");
+    LOG.warning( "war" );
+  }
+}
