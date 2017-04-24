@@ -1,0 +1,48 @@
+// matrixs are equals
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Main {
+	public void solve(Scanner in, PrintWriter out) {
+		int n = in.nextInt();
+		int m = in.nextInt();
+		int p = in.nextInt();
+		int[][] anm = new int[n][m];
+		int[][] amp = new int[m][p];
+		int[][] res = new int[n][p];
+		for(int i = 0; i < n; i++) {
+		    for(int j = 0; j < m; j++) {
+		        anm[i][j] = in.nextInt();
+		    }
+		}
+		for(int i = 0; i < m; i++) {
+		    for(int j = 0; j < p; j++) {
+		        amp[i][j] = in.nextInt();
+		    }
+		}
+		for(int i = 0; i < n; i++) {
+		    for(int j = 0; j < m; j++) {
+		        for(int t = 0; t < p; t++) {
+		            res[i][j] += anm[i][t] * amp[t][j];
+		        }
+		    }
+		}
+		for(int i = 0; i < n; i++) {
+		    for(int j = 0; j < p; j++) {
+		        out.print(res[i][j]);
+		        out.print(" ");
+		    }
+		    out.println();
+		}
+	}
+	public void run() {
+		try(Scanner in = new Scanner(System.in);
+			PrintWriter out = new PrintWriter(System.out); ) {
+			solve(in, out);
+		}
+	}
+	public static void main(String[] args) {
+		new Main().run();
+	}	
+}
