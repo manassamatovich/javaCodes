@@ -1,0 +1,58 @@
+import java.util.*;
+import java.io.*;
+import java.lang.*;
+import java.math.*;
+import java.util.logging.*;
+
+class Main {
+    public static void main(String[] args) {
+        Logger log = Logger.getLogger("");
+        // log.setLevel(Level.OFF);
+        Scanner in = new Scanner(System.in);
+        PrintWriter out = new PrintWriter(System.out);
+        new Task().solve(log, in, out);
+        out.close();
+    }
+    
+    static class Task {
+        public void solve(Logger log, Scanner in, PrintWriter out) {
+            int y = in.nextInt();
+            int m = in.nextInt() - 1;
+            int d = 31;
+            Calendar d1 = new GregorianCalendar(y, m, d);
+            int d2 = d1.get(Calendar.DAY_OF_MONTH);
+            //out.println(d2);
+            if(d1.get(Calendar.DAY_OF_MONTH) == d) {
+                // it has 31 days.
+                out.print("it has ");
+                out.print(d);
+                out.print(" days.");
+                return;
+            }
+            d = 30;
+            Calendar d11 = new GregorianCalendar(y, m, d);
+            if(d11.get(Calendar.DAY_OF_MONTH) == d) {
+                out.print("it has ");
+                out.print(d);
+                out.print(" days.");
+                return;
+            }
+            d = 29;
+            Calendar d111 = new GregorianCalendar(y, m, d);
+            if(d111.get(Calendar.DAY_OF_MONTH) == d) {
+                out.print("it has ");
+                out.print(d);
+                out.print(" days.");
+                return;
+            }
+            d = 28;
+            Calendar d1111 = new GregorianCalendar(y, m, d);
+            if(d1111.get(Calendar.DAY_OF_MONTH) == d) {
+                out.print("it has ");
+                out.print(d);
+                out.print(" days.");
+                return;
+            }
+        }
+    }
+}
