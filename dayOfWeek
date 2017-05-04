@@ -1,0 +1,54 @@
+import java.util.*;
+import java.io.*;
+import java.lang.*;
+import java.math.*;
+import java.util.logging.*;
+
+class Main {
+	public static void main(String[] args) {
+		Logger log = Logger.getLogger("");
+		Scanner in = new Scanner(System.in);
+		PrintWriter out = new PrintWriter(System.out);
+		new Task().solve(log, in, out);
+		out.close();
+	}
+	static class Task {
+		public void solve(Logger log, Scanner in, PrintWriter out) {
+			int d = in.nextInt();
+			int m = in.nextInt();
+			int y = in.nextInt();
+			
+Calendar cal = Calendar.getInstance();
+cal.set(Calendar.DAY_OF_MONTH, d); //Set Day of the Month, 1..31
+cal.set(Calendar.MONTH, m-1); //Set month, starts with JANUARY = 0
+cal.set(Calendar.YEAR,y); //Set year
+int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
+//System.out.println(cal.get(Calendar.DAY_OF_WEEK)); //Starts //with Sunday, 6 = friday
+
+			if(dayOfWeek == 5)
+				out.println("THURSDAY");
+			else if(dayOfWeek == 6)
+				out.println("FRIDAY");
+			else if(dayOfWeek == 7) 
+				out.println("SATURDAY");
+			else if(dayOfWeek == 1)
+				out.println("SUNDAY");
+			else if(dayOfWeek == 2)
+				out.println("MONDAY");
+			else if(dayOfWeek == 3)
+				out.println("TUESDAY");
+			else if(dayOfWeek == 4)
+				out.println("WEDNESDAY");
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
