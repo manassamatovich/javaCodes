@@ -1,0 +1,15 @@
+import java.util.*;
+import java.io.*;
+import java.lang.*;
+
+class Main {
+	public static void main(String[] args) throws IOException {
+		BufferedReader in = new BufferedReader(new FileReader("in.txt"));
+		PrintWriter out = new PrintWriter(new FileWriter("out.txt"));
+		StringTokenizer tk = new StringTokenizer(in.readLine(), " ");
+		String s = tk.nextToken();
+		s = tk.nextToken();
+		System.out.println(s);
+		out.close();
+	}
+}
