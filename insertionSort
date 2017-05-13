@@ -1,0 +1,28 @@
+import java.util.*;
+import java.io.*;
+import java.lang.*;
+import static java.lang.System.*;
+
+public class Main {
+  public static void main(String[] args) {
+    
+    int[] m = new int[]{4, 3, 2, 10, 5};
+    m = Sort(m);
+   	out.print(Arrays.toString(m));
+  };
+  public static int[] Sort(int[] m) {
+    
+    for(int j = 1; j < m.length; j++) {
+    	
+      int key = m[j];
+      int i = j - 1;
+      while(i >= 0 && m[i] > key) {
+      	
+        m[i + 1] = m[i];
+        i = i - 1;
+      }
+      m[i + 1] = key;
+    }
+    return m;
+  };
+}
