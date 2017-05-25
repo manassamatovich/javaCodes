@@ -1,0 +1,43 @@
+import java.util.*;
+import java.io.*;
+import java.lang.*;
+import static java.lang.System.*;
+import java.math.*;
+
+public class Main {
+	public static void main(String[] args) throws IOException {
+		FileReader fileReader = new FileReader("in");
+		InputReader in = new InputReader(fileReader);
+		PrintWriter out = new PrintWriter(System.out);
+		Task solver = new Task();
+		solver.solve(in, out);	
+		out.close();
+	};
+	
+	static class Task {
+		public void solve(InputReader in, PrintWriter out) {
+		
+		};
+	}
+
+	static class InputReader {
+		public BufferedReader reader;
+		public StringTokenizer tokenizer;
+
+		public InputReader(FileReader fileReader) {
+			reader = new BufferedReader(fileReader);
+			tokenizer = null;
+		};
+
+		public String next() {
+			while(tokenizer == null || !tokenizer.hasMoreTokens()) {
+				try {
+						tokenizer = new StringTokenizer(reader.readLine());
+				} catch(IOException ex) {
+					throw new RuntimeException(ex);
+				}
+			}
+			return tokenizer.nextToken();
+		};
+	}
+}
