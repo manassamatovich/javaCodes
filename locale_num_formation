@@ -1,0 +1,26 @@
+import java.util.*;
+import java.text.*;
+
+public class Solution {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double payment = scanner.nextDouble();
+        scanner.close();
+        
+        Locale uslocale = new Locale.Builder().setLanguage("en").setRegion("US").build(); 
+        Locale inlocale = new Locale.Builder().setLanguage("en").setRegion("IN").build(); 
+        Locale chlocale = new Locale.Builder().setLanguage("zh").setRegion("CN").build(); 
+        Locale frlocale = new Locale.Builder().setLanguage("fr").setRegion("FR").build();
+        
+        NumberFormat u = NumberFormat.getCurrencyInstance(uslocale);
+        NumberFormat i = NumberFormat.getCurrencyInstance(inlocale);
+        NumberFormat c = NumberFormat.getCurrencyInstance(chlocale);
+        NumberFormat f = NumberFormat.getCurrencyInstance(frlocale);
+
+        System.out.println("US: " + u.format(payment)); //fmt.format(120.00)
+        System.out.println("India: " + i.format(payment));
+        System.out.println("China: " + c.format(payment));
+        System.out.println("France: " + f.format(payment));
+    }
+}
